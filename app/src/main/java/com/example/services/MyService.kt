@@ -21,10 +21,11 @@ class MyService : Service() {
     override fun onCreate() {
         super.onCreate()
         mp = MediaPlayer.create(this, R.raw.song)
-        mp.setOnCompletionListener {
-            // The song has completed, stop the service
-            stopSelf()
-        }
+        mp.isLooping = true
+//        mp.setOnCompletionListener {
+//            // The song has completed, stop the service
+//            stopSelf()
+//        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
